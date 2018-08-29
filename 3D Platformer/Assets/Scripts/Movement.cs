@@ -179,14 +179,17 @@ public class Movement : MonoBehaviour
         JumpingAndLanding();
     }
 
+    private float canJump = 0f;
+
     private void JumpingAndLanding()
     {
         bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
 
-        if (jumpCooldownOver && m_isGrounded && Input.GetKey(KeyCode.Space))
+        if (jumpCooldownOver && m_isGrounded && Input.GetKeyDown(KeyCode.Space) && Time.time > canJump)
         {
             m_jumpTimeStamp = Time.time;
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            canJump = Time.time + 1.5f;
         }
 
         if (!m_wasGrounded && m_isGrounded)
