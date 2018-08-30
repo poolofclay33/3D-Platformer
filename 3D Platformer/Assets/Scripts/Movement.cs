@@ -10,9 +10,9 @@ public class Movement : MonoBehaviour
         Direct
     }
 
-    [SerializeField] private float m_moveSpeed = 2;
+    [SerializeField] private float m_moveSpeed = 5;
     [SerializeField] private float m_turnSpeed = 200;
-    [SerializeField] private float m_jumpForce = 4;
+    [SerializeField] private float m_jumpForce = 35;
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
 
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     private float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
+    private readonly float m_walkScale = 2.5f;
     private readonly float m_backwardsWalkScale = 0.16f;
     private readonly float m_backwardRunScale = 0.66f;
 
@@ -91,11 +91,6 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            m_animator.Play("THROW"); //once player right-clicks, THROW anim will play which will call an event function to throw. 
-        }
-
         m_animator.SetBool("Grounded", m_isGrounded);
 
         switch (m_controlMode)
@@ -105,7 +100,7 @@ public class Movement : MonoBehaviour
                 break;
 
             case ControlMode.Tank:
-                TankUpdate();
+                //TankUpdate();
                 break;
 
             default:
@@ -121,18 +116,6 @@ public class Movement : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
-        bool walk = Input.GetKey(KeyCode.LeftShift);
-
-        if (v < 0)
-        {
-            if (walk) { v *= m_backwardsWalkScale; }
-            else { v *= m_backwardRunScale; }
-        }
-        else if (walk)
-        {
-            v *= m_walkScale;
-        }
-
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
@@ -144,6 +127,7 @@ public class Movement : MonoBehaviour
         JumpingAndLanding();
     }
 
+
     private void DirectUpdate()
     {
         float v = Input.GetAxis("Vertical");
@@ -154,7 +138,10 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             v *= m_walkScale;
+            m_animator.SetBool("Sprint", true);
             h *= m_walkScale;
+        } else {
+            m_animator.SetBool("Sprint", false);
         }
 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
