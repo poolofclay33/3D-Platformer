@@ -23,8 +23,8 @@ public class Movement : MonoBehaviour
 
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 2.5f;
-    //private readonly float m_backwardsWalkScale = 0.16f;
-    //private readonly float m_backwardRunScale = 0.66f;
+    private readonly float m_backwardsWalkScale = 0.16f;
+    private readonly float m_backwardRunScale = 0.66f;
 
     private bool m_wasGrounded;
     private Vector3 m_currentDirection = Vector3.zero;
