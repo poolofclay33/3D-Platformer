@@ -1,13 +1,14 @@
 fileFormatVersion: 2
 guid: 8cbebd43672d44b149390ff4b24a386d
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: robot(2)
     100002: //RootNode
     400000: robot(2)
     400002: //RootNode
     2100000: robot(2)Mat
+    2100002: palette
     2300000: robot(2)
     3300000: robot(2)
     4300000: robot(2)
@@ -62,6 +63,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
