@@ -176,7 +176,7 @@ public class Movement : MonoBehaviour
         {
             m_jumpTimeStamp = Time.time;
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
-            canJump = Time.time + 1.5f;
+            canJump = Time.time + 0.5f;
         }
 
         if (!m_wasGrounded && m_isGrounded)
