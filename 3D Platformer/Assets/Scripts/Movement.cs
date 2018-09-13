@@ -140,6 +140,7 @@ public class Movement : MonoBehaviour
             v *= m_walkScale;
             m_animator.SetBool("Sprint", true);
             h *= m_walkScale;
+
         } else {
             m_animator.SetBool("Sprint", false);
         }
