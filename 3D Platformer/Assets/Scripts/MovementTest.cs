@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementTest : MonoBehaviour {
 
     public float Speed = 5f;
-    public float JumpHeight = 2f;
+    public float JumpHeight = 4f;
     public float GroundDistance = 0.2f;
     public float DashDistance = 5f;
     public LayerMask Ground;
@@ -44,7 +44,7 @@ public class MovementTest : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
-            _body.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+            _body.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -1f * Physics.gravity.y), ForceMode.VelocityChange);
 
             _anim.SetBool("Grounded", _isGrounded);
         }
@@ -53,6 +53,7 @@ public class MovementTest : MonoBehaviour {
         {
             Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
             _body.AddForce(dashVelocity, ForceMode.VelocityChange);
+            _anim.Play("Charge");
         }
 
         if(Input.GetKey(KeyCode.LeftShift))

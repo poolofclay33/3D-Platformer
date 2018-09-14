@@ -19,7 +19,7 @@ public class Jumping : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMulti - 1) * Time.deltaTime;
+            rb.velocity += Physics.gravity * (fallMulti - 1) * Time.deltaTime;
         }
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
