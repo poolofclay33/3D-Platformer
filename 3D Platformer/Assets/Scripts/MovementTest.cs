@@ -56,6 +56,14 @@ public class MovementTest : MonoBehaviour {
             _anim.Play("Charge");
         }
 
+        /*
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            _anim.SetBool("Sliding", true);
+            _anim.Play("Slide");
+        }
+        */
+
         if(Input.GetKey(KeyCode.LeftShift))
         {
             _inputs.x *= sprint;
