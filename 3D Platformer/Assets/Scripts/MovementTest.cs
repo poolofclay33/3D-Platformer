@@ -33,6 +33,7 @@ public class MovementTest : MonoBehaviour {
         _anim.SetBool("Grounded", _isGrounded);
 
         _inputs = Vector3.zero;
+
         _inputs.x = Input.GetAxis("Horizontal");
         _inputs.z = Input.GetAxis("Vertical");
 
