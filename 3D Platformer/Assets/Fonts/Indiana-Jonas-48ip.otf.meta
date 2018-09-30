@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: db4bbf06378aa4fbfa981e68ce8f5a08
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Indiana Jonas
+  fontNames:
+  - Indiana Jonas
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cb271758541f446429c1d243b97a3378, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
