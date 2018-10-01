@@ -9,6 +9,7 @@ public class ClickTest : MonoBehaviour {
     public Material _cubeColor;
     public Material _cubeClicked;
     public Animator _playerAnim;
+    public Animator _animCam;
 
 	private void OnMouseDown()
 	{
@@ -32,7 +33,8 @@ public class ClickTest : MonoBehaviour {
     IEnumerator startGameAnim()
     {
         _playerAnim.Play("Turn_and_Run");
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Testing");
+        yield return new WaitForSeconds(.6f);
+        _animCam.Play("Play_Cam");
+        //SceneManager.LoadScene("Testing");
     }
 }
