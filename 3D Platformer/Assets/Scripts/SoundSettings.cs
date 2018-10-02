@@ -8,6 +8,7 @@ public class SoundSettings : MonoBehaviour {
     public Material _cubeHighlight;
     public Material _cubeColor;
     public Material _cubeClicked;
+    public GameObject _videoCube;
 
     private void OnMouseDown()
     {
@@ -29,6 +30,9 @@ public class SoundSettings : MonoBehaviour {
 
     IEnumerator Clicked()
     {
+        _videoCube.SetActive(false);
+        //_videoCube.transform.position.Set(-435.88f, -182.86f, -13.04f);
+        //_videoCube.transform.rotation.Set(1.222f, -35.784f, 1.695f, 0f);
         _cube.gameObject.SetActive(true);
         _cube.GetComponent<Rigidbody>().AddForce(0, _downSpeed, 0, ForceMode.Impulse);
         yield return new WaitForSeconds(.1f);

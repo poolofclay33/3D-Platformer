@@ -75,6 +75,7 @@ public class MovementTest : MonoBehaviour {
         }
     }
 
+
     void FixedUpdate()
     {
         _body.MovePosition(_body.position + _inputs * Speed * Time.fixedDeltaTime);
