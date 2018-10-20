@@ -112,11 +112,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4068437518929322}
+  - component: {fileID: 95103329852747272}
   - component: {fileID: 54393608128701774}
   - component: {fileID: 136232696951525700}
   - component: {fileID: 114927186860525296}
   - component: {fileID: 114418108543437004}
-  - component: {fileID: 95103329852747272}
   m_Layer: 0
   m_Name: Runner(WORKS)
   m_TagString: Player
@@ -626,22 +626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1847071633679968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4191584440107926}
-  - component: {fileID: 95515260595643768}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1880083088412764
 GameObject:
   m_ObjectHideFlags: 1
@@ -814,7 +798,6 @@ Transform:
   m_Children:
   - {fileID: 4406984854569776}
   - {fileID: 4808938990484474}
-  - {fileID: 4191584440107926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -873,19 +856,6 @@ Transform:
   m_Father: {fileID: 4543085816959508}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -7.3910003, y: 0, z: 0}
---- !u!4 &4191584440107926
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847071633679968}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0023571346, y: 0.15833464, z: -0.011903519}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4068437518929322}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4250296474146688
 Transform:
   m_ObjectHideFlags: 1
@@ -1529,7 +1499,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &65198830593960988
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1574,29 +1544,11 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059698902908776}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 2b127fbcfde0549a4b7ce912125b4db2, type: 3}
   m_Controller: {fileID: 9100000, guid: 2be2206e6d3865742a99fd2f946e6378, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &95515260595643768
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847071633679968}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 64c48257c2b644f86bb59c68cfc5fa05, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1642,7 +1594,7 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059698902908776}
-  m_Material: {fileID: 13400000, guid: 00f23a24cb8854d33a3bb38eb956707d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.038016085

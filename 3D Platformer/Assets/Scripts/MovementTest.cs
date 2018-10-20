@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class MovementTest : MonoBehaviour {
 
-    public float Speed = 5f;
+    public float Speed = 10f;
     public float JumpHeight = 4f;
     public float GroundDistance = 0.2f;
     public float DashDistance = 5f;
     public LayerMask Ground;
-    public float sprint = 1.5f;
+    public float sprint = 5f;
 
     private Rigidbody _body;
     private Vector3 _inputs = Vector3.zero;
@@ -39,8 +40,9 @@ public class MovementTest : MonoBehaviour {
 
         if (_inputs != Vector3.zero)
         {
+            //_inputs = _inputs / 2;
             transform.forward = _inputs;
-            _anim.SetFloat("Speed", _inputs.magnitude);
+            _anim.SetFloat("Speed", _inputs.sqrMagnitude);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
@@ -50,10 +52,10 @@ public class MovementTest : MonoBehaviour {
             _anim.SetBool("Grounded", _isGrounded);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
-            _body.AddForce(dashVelocity, ForceMode.VelocityChange);
+            _body.AddForce(dashVelocity * 2.5f, ForceMode.VelocityChange);
             _anim.Play("Charge");
         }
 
@@ -65,6 +67,7 @@ public class MovementTest : MonoBehaviour {
         }
         */
 
+        /*
         if(Input.GetKey(KeyCode.LeftShift))
         {
             _inputs.x *= sprint;
@@ -73,6 +76,7 @@ public class MovementTest : MonoBehaviour {
         } else {
             _anim.SetBool("Sprint", false);
         }
+        */
     }
 
 

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Ground
+  - Battery
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
